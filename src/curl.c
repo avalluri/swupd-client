@@ -283,6 +283,7 @@ exit:
 		switch (ret) {
 		case 200:
 		case 206:
+		case 0: /* FIXME: file:// URIs do not have an HTTP reponse code set, so we need a solution to support file:// (also for curl-multi in download.c) */
 			err = 0;
 			break;
 		case 403:
